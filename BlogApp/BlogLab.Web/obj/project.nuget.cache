@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "NF76XrGa2dCNQJOIYsEqq3s59grC3WsrEHx+tcLMWmWcQILyZHdfJQX3J1/XAz+7/WNnGvskzbP5lnbdxS7MNw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\BlogApp\\BlogApp\\BlogLab.Web\\BlogLab.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
+  "logs": []
+}
