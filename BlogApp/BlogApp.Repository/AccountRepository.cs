@@ -1,12 +1,9 @@
 ﻿using BlogApp.Models.Account;
 using Dapper;
-using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,6 +19,7 @@ namespace BlogApp.Repository
         public async Task<IdentityResult> CreateAsync(ApplicationUserIdentity user, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
+
             var dataTable = new DataTable();
             dataTable.Columns.Add("Username", typeof(string));
             dataTable.Columns.Add("NormalizedUsername", typeof(string));
@@ -43,7 +41,7 @@ namespace BlogApp.Repository
             {
                 await connection.OpenAsync(cancellationToken);
 
-                await connection.ExecuteAsync("Account_Insert", new { Account = dataTable.AsTableValuedParameter("dbo.AccountType") }, CommandType.StoredProcedure);
+                await connection.ExecuteAsync("Account_Insert", new { Account = dataTable.AsTableValuedParameter("dbo.AccountType") }, commandType: CommandType.StoredProcedure);
             }
 
             return IdentityResult.Success;
