@@ -1,0 +1,14 @@
+﻿using BlogApp.Models.Account;
+using Microsoft.AspNet.Identity;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace BlogApp.Repository
+{
+    public interface IAccountRepository
+    {
+        public Task<IdentityResult> CreateAsync(ApplicationUserIdentity user, CancellationToken cancellationToken);
+        public Task<ApplicationUserIdentity> GetByUsernameAsync(string normalizedUsername, CancellationToken cancellationToken);
+    }
+}
