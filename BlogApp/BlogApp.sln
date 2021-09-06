@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogApp.Repository", "BlogA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApp.Identity", "BlogApp.Identity\BlogApp.Identity.csproj", "{F5DFBE86-2890-4916-A9A2-9676C0D5BDE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApp.Services", "BlogApp.Services\BlogApp.Services.csproj", "{19D31301-E6FB-499B-8DE5-4E7FFE420F81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F5DFBE86-2890-4916-A9A2-9676C0D5BDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5DFBE86-2890-4916-A9A2-9676C0D5BDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5DFBE86-2890-4916-A9A2-9676C0D5BDE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D31301-E6FB-499B-8DE5-4E7FFE420F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D31301-E6FB-499B-8DE5-4E7FFE420F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D31301-E6FB-499B-8DE5-4E7FFE420F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D31301-E6FB-499B-8DE5-4E7FFE420F81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

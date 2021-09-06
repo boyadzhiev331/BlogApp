@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NF76XrGa2dCNQJOIYsEqq3s59grC3WsrEHx+tcLMWmWcQILyZHdfJQX3J1/XAz+7/WNnGvskzbP5lnbdxS7MNw==",
+  "dgSpecHash": "m95Y58iSyJZ6gkYTsftvKAejujcWQLhL2mITDnsZ9JytSgWtAeQthch5Tys8FNl8eXzG+Ma5TRreKHq84b+U2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\BlogApp\\BlogApp\\BlogLab.Web\\BlogLab.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
   ],
   "logs": []
