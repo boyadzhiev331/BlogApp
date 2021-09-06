@@ -16,6 +16,6 @@ namespace BlogApp.Models.Blog
         [MinLength(10, ErrorMessage = "Must be 10-3000 characters")]
         [MaxLength(3000, ErrorMessage = "Must be 10-3000 characters")]
         public string Content { get; set; }
-        public int? PhotId { get; set; }
+        public int? PhotoId { get; set; }
     }
 }
