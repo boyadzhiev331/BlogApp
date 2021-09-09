@@ -65,7 +65,6 @@ namespace BlogLab.Web.Controllers
             return Ok(photos);
         }
 
-        [Authorize]
         [HttpGet("{photoId}")]
         public async Task<ActionResult<Photo>> Get(int photoId)
         {
@@ -75,7 +74,7 @@ namespace BlogLab.Web.Controllers
         }
 
         [Authorize]
-        [HttpDelete]
+        [HttpDelete("{photoId}")]
         public async Task<ActionResult<int>> Delete(int photoId)
         {
             int applicationUserId = int.Parse(User.Claims.First(i => i.Type == JwtRegisteredClaimNames.NameId).Value);
@@ -90,17 +89,11 @@ namespace BlogLab.Web.Controllers
 
                     var usedInBlog = blogs.Any(b => b.PhotoId == photoId);
 
-                    if (usedInBlog)
-                    {
-                        return BadRequest("Cannot remove photo as it is being used in published blog(s).");
-                    }
+                    if (usedInBlog) return BadRequest("Cannot remove photo as it is being used in published blog(s).");
 
                     var deleteResult = await _photoService.DeletePhotoAsync(foundPhoto.PublicId);
 
-                    if (deleteResult.Error != null)
-                    {
-                        return BadRequest(deleteResult.Error.Message);
-                    }
+                    if (deleteResult.Error != null) return BadRequest(deleteResult.Error.Message);
 
                     var affectedRows = await _photoRepository.DeleteAsync(foundPhoto.PhotoId);
 
@@ -108,7 +101,7 @@ namespace BlogLab.Web.Controllers
                 }
                 else
                 {
-                    return BadRequest("Photo does not belong to the logged in user.");
+                    return BadRequest("Photo was not uploaded by the current user.");
                 }
             }
 

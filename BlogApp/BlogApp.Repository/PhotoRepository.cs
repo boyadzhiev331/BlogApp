@@ -27,9 +27,10 @@ namespace BlogApp.Repository
             {
                 await connection.OpenAsync();
 
-                affectedRows = await connection.ExecuteAsync("Photo_Delete",
-                                                                  new { PhotoId = photoId },
-                                                                  commandType: CommandType.StoredProcedure);
+                affectedRows = await connection.ExecuteAsync(
+                    "Photo_Delete",
+                    new { PhotoId = photoId },
+                    commandType: CommandType.StoredProcedure);
             }
 
             return affectedRows;
@@ -59,8 +60,8 @@ namespace BlogApp.Repository
             {
                 await connection.OpenAsync();
 
-                photo = await connection.QueryFirstOrDefaultAsync<Photo>("Photo_GetByUserId",
-                                                                  new { PhotoId = photoId},
+                photo = await connection.QueryFirstOrDefaultAsync<Photo>("Photo_Get",
+                                                                  new { PhotoId = photoId },
                                                                   commandType: CommandType.StoredProcedure);
             }
 
@@ -83,7 +84,10 @@ namespace BlogApp.Repository
                 await connection.OpenAsync();
 
                 newPhotoId = await connection.ExecuteScalarAsync<int>("Photo_Insert",
-                                                                  new { Photo = dataTable.AsTableValuedParameter("dbo.PhotoType")},
+                                                                  new { 
+                                                                      Photo = dataTable.AsTableValuedParameter("dbo.PhotoType"),
+                                                                      ApplicationUserId = applicationUserId
+                                                                  },
                                                                   commandType: CommandType.StoredProcedure);
             }
 

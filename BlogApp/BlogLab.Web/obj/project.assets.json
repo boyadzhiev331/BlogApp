@@ -1683,6 +1683,7 @@
       "BlogApp.Models >= 1.0.0",
       "BlogApp.Repository >= 1.0.0",
       "BlogApp.Services >= 1.0.0",
+      "CloudinaryDotNet >= 1.15.2",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.10"
     ]
   },
@@ -1738,6 +1739,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "CloudinaryDotNet": {
+            "target": "Package",
+            "version": "[1.15.2, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[3.1.10, )"

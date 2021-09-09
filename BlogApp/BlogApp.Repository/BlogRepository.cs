@@ -42,7 +42,7 @@ namespace BlogApp.Repository
             {
                 await connection.OpenAsync();
 
-                using (var multi = await connection.QueryMultipleAsync("Blog_All", 
+                using (var multi = await connection.QueryMultipleAsync("Blog_GetaAll", 
                     new { 
                         Offset = (blogPaging.Page - 1) * blogPaging.PageSize,
                         PageSize = blogPaging.PageSize
@@ -82,7 +82,7 @@ namespace BlogApp.Repository
             {
                 await connection.OpenAsync();
 
-                famousBlogs = await connection.QueryAsync<Blog>("Blog_GetAllFamous",
+                famousBlogs = await connection.QueryAsync<Blog>("Blog_GetaAllFamous",
                                                                   new { },
                                                                   commandType: CommandType.StoredProcedure);
             }
