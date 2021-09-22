@@ -80,7 +80,7 @@ namespace BlogLab.Web.Controllers
         }
 
         [Authorize]
-        [HttpDelete("famous")]
+        [HttpDelete("{blogId}")]
         public async Task<ActionResult<int>> Delete(int blogId)
         {
             int applicationUserId = int.Parse(User.Claims.First(i => i.Type == JwtRegisteredClaimNames.NameId).Value);
