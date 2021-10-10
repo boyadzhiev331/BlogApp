@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 import { ToastrService } from 'ngx-toastr';
 import { BlogCreate } from 'src/app/models/blog/blog-create.model';
@@ -25,7 +25,8 @@ export class BlogEditComponent implements OnInit {
     private formBuilder: FormBuilder,
     private blogService: BlogService,
     private photoService: PhotoService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -122,6 +123,7 @@ export class BlogEditComponent implements OnInit {
     this.blogService.create(blogCreate).subscribe(createdBlog => {
       this.updateForm(createdBlog);
       this.toastr.info("Blog saved successfully.");
+      this.router.navigate(['/blogs']);
     })
   }
 
