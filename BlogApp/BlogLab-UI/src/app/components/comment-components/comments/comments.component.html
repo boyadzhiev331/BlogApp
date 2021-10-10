@@ -11,7 +11,7 @@
                 </blockquote>
 
                 <app-comment-box
-                    *ngIf="(comment.isEditable && accountService.givenUserIsLoggedIn(comment.username)) || !!comment.isReplying"
+                    *ngIf="(!!comment.isEditable && accountService.givenUserIsLoggedIn(comment.username)) || !!comment.isReplying"
                     [comment]="comment"
                     (commentSaved)="onCommentSaved($event, comment)"
                 >
@@ -46,7 +46,7 @@
 
         </div>
 
-        <app-comments [commnets]="comment.comments" *ngIf="comment.comments"></app-comments>
+        <app-comments [comments]="comment.comments" *ngIf="comment.comments"></app-comments>
 
     </div>
 </div>

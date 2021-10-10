@@ -39,9 +39,9 @@ export class CommentBoxComponent implements OnInit {
     };
 
     this.blogCommentService.create(blogCommentCreate).subscribe(blogComment => {
-      this.commentSaved.emit(blogComment);
+      this.toastr.info("Comment saved.");
       this.resetComment();
-      this.toastr.info("Comment saved.")
+      this.commentSaved.emit(blogComment);
     })
   }
 
